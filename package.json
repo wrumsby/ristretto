@@ -1,6 +1,9 @@
 {
 	"name": "ristretto",
 	"description": "A browser friendly assertion library for Mocha",
+	"categories": [
+		"Testing"
+	],
 	"version": "0.0.2",
 	"dependencies": {},
 	"devDependencies": {
@@ -29,9 +32,9 @@
 			"web": "http://walter.rumsby.name"
 		}
 	],
-	"categories": [
-		"Testing"
-	],
+	"bugs": {
+		"web": "https://github.com/wrumsby/ristretto/issues"
+	},
 	"licenses": [
 		{
 			"type": "MIT",
