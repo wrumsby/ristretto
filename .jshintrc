@@ -1,0 +1,16 @@
+{
+	"camelcase": true,
+	"eqeqeq": false,
+	"curly": true,
+	"indent": 4,
+	"newcap": true,
+	"quotmark": "single",
+	"undef": true,
+	"unused": true,
+	"strict": true,
+	"globals": {
+		"define": false,
+		"describe": false,
+		"it": false
+	}
+}

@@ -1,0 +1,1 @@
+A browser friendly assertion library for Mocha.
