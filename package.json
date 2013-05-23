@@ -28,6 +28,9 @@
 				"web": "http://walter.rumsby.name"
 			}
 		],
+		"categories": [
+			"Testing"
+		],
 		"licenses": [
 			{
 				"type": "MIT",
@@ -40,6 +43,6 @@
 				"url": "https://github.com/wrumsby/ristretto.git"
 			}
 		],
-		"github": "https://github.com/wrumsby/ristretto"
+		"github": "https://github.com/wrumsby/ristretto",
 	}
 }
