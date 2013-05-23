@@ -21,28 +21,28 @@
 		"include": [
 			"ristretto.js",
 			"README.md"
-		],
-		"maintainers": [
-			{
-				"name": "Walter Rumsby",
-				"web": "http://walter.rumsby.name"
-			}
-		],
-		"categories": [
-			"Testing"
-		],
-		"licenses": [
-			{
-				"type": "MIT",
-				"url": "http://www.opensource.org/licenses/mit-license.php"
-			}
-		],
-		"repositories": [
-			{
-				"type": "git",
-				"url": "https://github.com/wrumsby/ristretto.git"
-			}
-		],
-		"github": "https://github.com/wrumsby/ristretto"
-	}
+		]
+	},
+	"maintainers": [
+		{
+			"name": "Walter Rumsby",
+			"web": "http://walter.rumsby.name"
+		}
+	],
+	"categories": [
+		"Testing"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.opensource.org/licenses/mit-license.php"
+		}
+	],
+	"repositories": [
+		{
+			"type": "git",
+			"url": "https://github.com/wrumsby/ristretto.git"
+		}
+	],
+	"github": "https://github.com/wrumsby/ristretto"
 }
