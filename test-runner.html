@@ -1,35 +1,29 @@
 <!DOCTYPE>
 <html>
-  <head>
-    <title>Simple Mocha Test Runner</title>
-    <link rel="stylesheet" href="jam/mocha/mocha.css">
-    <script src="jam/mocha/mocha.js"></script>
-    <script src="jam/require.js"></script>
-    <script src="require-config.js"></script>
-    <script>
-    </script>
-  </head>
-  <body>
-    <div id="mocha"></div>
-    <script>
-      (function () {
-        'use strict';
+<head>
+	<title>Simple Mocha Test Runner</title>
+	<link rel="stylesheet" href="jam/mocha/mocha.css">
+	<script src="jam/mocha/mocha.js"></script>
+	<script src="jam/require.js"></script>
+	<script src="require-config.js"></script>
+</head>
+<body>
+	<div id="mocha"></div>
+	<script>
+		(function () {
+			'use strict';
 
-        var mocha = window.mocha;
+			var mocha = window.mocha;
 
-        mocha.setup('bdd');
+			mocha.setup('bdd');
 
-    		mocha.setup({
-		  	'globals': ['setTimeout', 'setInterval', 'clearTimeout', 'clearInterval']
-		    });
-
-        // define these in a tests.js
-        require(['test-suites'], function (tests) {
-	        require(tests, function () {
-	          mocha.run();
-	        });
-        });
-      }());
-    </script>
-  </body>
+			require(['test-suites'], function (tests) {
+				require(tests, function () {
+					mocha.run();
+				});
+			});
+		}());
+	</script>
+	<script src="http://localhost:35729/livereload.js"></script>
+</body>
 </html>

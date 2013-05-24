@@ -19,7 +19,10 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: files,
-				tasks: ['mocha', 'jshint']
+				tasks: ['mocha', 'jshint'],
+				options: {
+					livereload: true
+				}
 			}
 		}
 	});
