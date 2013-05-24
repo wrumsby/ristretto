@@ -1,4 +1,5 @@
-define([], function () {
+/*global window */
+(function (global) {
 	'use strict';
 
 	var ristretto = function (expression, message) {
@@ -47,5 +48,11 @@ define([], function () {
 		}
 	};
 
-	return ristretto;
-});
+	if (typeof define === 'function' && define.amd) {
+		define([], function () {
+			return ristretto;
+		});
+	} else {
+		global.ristretto = ristretto;
+	}
+}(window));
