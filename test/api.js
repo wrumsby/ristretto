@@ -79,5 +79,36 @@ define(['chai-amd', 'ristretto'], function (chai, ristretto) {
 				assert(false, 'ristretto.fail() should fail');
 			});
 		});
+
+		describe('notEqual', function () {
+			it('should fail if the values are equal', function () {
+				try {
+					ristretto.notEqual(2, '2');
+				} catch (e) {
+					return;
+				}
+
+				assert(false, 'ristretto.notEqual() should fail if values are equal');
+			});
+
+			it('should fail if the values are strictly equal', function () {
+				try {
+					ristretto.notEqual(2, 2);
+				} catch (e) {
+					return;
+				}
+
+				assert(false, 'ristretto.notEqual() should fail if values are strictly equal');
+			});
+
+			it('should pass if the values are not equal', function () {
+				try {
+					ristretto.notEqual(3, 4);
+				} catch (e) {
+					assert(false, 'ristretto.notEqual() should pass if values are not equal');
+				}
+
+			});
+		});
 	});
 });
