@@ -45,6 +45,19 @@
 	};
 
 	/**
+	 * Assert that `value` is truthy.
+	 *
+	 * @method truthy
+	 * @param value Value to test
+	 * @param {String} [message] Failure message
+	 */
+	ristretto.truthy = function (value, message) {
+		if (!value) {
+			throw new AssertionError(message || value + ' is not truthy');
+		}
+	};
+
+	/**
 	 * Explicitly fail.
 	 *
 	 * Unlike Chai this method isn't designed to have the same signature as
@@ -93,7 +106,7 @@
 	 * @param {String} [message] Failure message
 	 */
 	ristretto.isTrue = function (value, message) {
-		if (value != true) {
+		if (value !== true) {
 			throw new AssertionError(message || value + ' is not true');
 		}
 	};
@@ -106,7 +119,7 @@
 	 * @param {String} [message] Failure message
 	 */
 	ristretto.isFalse = function (value, message) {
-		if (value != false) {
+		if (value !== false) {
 			throw new AssertionError(message || value + ' is not false`');
 		}
 	};
