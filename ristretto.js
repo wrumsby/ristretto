@@ -12,9 +12,7 @@
 
 	/**
 	 * Ristretto is a lightweight assertion library for Mocha
-	 * that is typically used as an AMD module.
-	 *
-	 * Ristretto can also be used without AMD.
+	 * that is typically used as an AMD module, but can also be used without AMD.
 	 *
 	 * @module ristretto
 	 * @example
