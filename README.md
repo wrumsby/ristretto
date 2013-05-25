@@ -28,7 +28,7 @@ Whilst using modules is highly recommended, it is possible to use Ristretto with
 
 ## Package Manager Support
 
-Ristretto is available as [a JamJS package](http://jamjs.org/packages/#/details/ristretto). To install Ristretto via Jam first install Jam:
+Ristretto is available as a [JamJS](http://jamjs.org/) [package](http://jamjs.org/packages/#/details/ristretto). To install Ristretto via Jam first install Jam:
 
     npm install -g jamjs
 
