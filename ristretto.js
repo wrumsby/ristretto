@@ -58,6 +58,21 @@
 	};
 
 	/**
+	 * Assert that `value` is falsey.
+	 *
+	 * @method falsey
+	 * @param value Value to test
+	 * @param {String} [message] Failure message
+	 */
+	ristretto.falsey = function (value, message) {
+		if (!value) {
+			return;
+		}
+
+		throw new AssertionError(message || value + ' is not falsey');
+	},
+
+	/**
 	 * Explicitly fail.
 	 *
 	 * Unlike Chai this method isn't designed to have the same signature as

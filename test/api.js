@@ -110,5 +110,47 @@ define(['chai-amd', 'ristretto'], function (chai, ristretto) {
 
 			});
 		});
+
+		describe('falsey', function () {
+			it('should pass if the value is false', function () {
+				try {
+					ristretto.falsey(false);
+				} catch (e) {
+					assert(false, 'ristretto.falsey() should pass if value is false');
+				}
+			});
+
+			it('should pass if the value is falsey', function () {
+				var falsey;
+
+				try {
+					ristretto.falsey(falsey);
+				} catch (e) {
+					assert(false, 'ristretto.falsey() should pass if value is falsey');
+				}
+			});
+
+			it('should fail if the value is true', function () {
+				try {
+					ristretto.falsey(true);
+				} catch (e) {
+					return;
+				}
+
+				assert(false, 'ristretto.falsey() should fail if value is true');
+			});
+
+			it('should pass if the value is truthy', function () {
+				var truthy = 1;
+
+				try {
+					ristretto.falsey(truthy);
+				} catch (e) {
+					return;
+				}
+
+				assert(false, 'ristretto.falsey() should fail if value is truthy');
+			});
+		});
 	});
 });
