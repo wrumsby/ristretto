@@ -41,10 +41,11 @@ module.exports = function(grunt) {
 				version: '<%= pkg.version %>',
 				url: '<%= pkg.homepage %>',
 				options: {
-					ignorePaths: ['jam', 'node_modules', 'test'],
+					ignorePaths: ['doctheme', 'jam', 'node_modules', 'test'],
 					paths: '.',
 					outdir: 'doc',
-					theme: 'default'
+					themedir: 'doctheme',
+					helpers: ['doctheme/helpers/helpers.js']
 				}
 			}
 		}

@@ -1,0 +1,3 @@
+[submodule "doctheme"]
+	path = doctheme
+	url = git://github.com/kevinlacotaco/yuidoc-bootstrap-theme.git
