@@ -152,5 +152,33 @@ define(['chai-amd', 'ristretto'], function (chai, ristretto) {
 				assert(false, 'ristretto.falsey() should fail if value is truthy');
 			});
 		});
+
+		describe('strictNotEqual', function () {
+			it('should pass if acutal and expected are strictly not equal', function () {
+				try {
+					ristretto.strictNotEqual(1, 2);
+				} catch (e) {
+					assert(false, 'ristretto.strictNotEqual() should pass if actual and expected are strictly not equal');
+				}
+			});
+
+			it('should pass if actual and expected are equal, but not strictly equal', function () {
+				try {
+					ristretto.strictNotEqual(1, '1');
+				} catch (e) {
+					assert(false, 'ristretto.strictNotEqual() should pass if actual and expected are equal, but strictly not equal');
+				}
+			});
+
+			it('should fail if actual and expected are strictly equal', function () {
+				try {
+					ristretto.strictNotEqual(1, 1);
+				} catch (e) {
+					return;
+				}
+
+				assert(false, 'ristretto.strictNotEqual() should fail if actual and expected are strictly equal');
+			});
+		});
 	});
 });

@@ -128,6 +128,22 @@
 	};
 
 	/**
+	 * Assert strict inequality of `actual` and `expected`.
+	 *
+	 * @method strictNotEqual
+	 * @param actual Actual value
+	 * @param expected Expected value
+	 * @param {String} [message] Failure message
+	 */
+	ristretto.strictNotEqual = function (actual, expected, message) {
+		if (actual !== expected) {
+			return;
+		}
+
+		throw new AssertionError(message || actual + ' equals ' + expected);
+	},
+
+	/**
 	 * Asserts that `value` is `true`.
 	 *
 	 * @method isTrue
