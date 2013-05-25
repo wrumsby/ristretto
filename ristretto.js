@@ -53,9 +53,7 @@
 	 * @param {String} [message] Failure message
 	 */
 	ristretto.fail = function (message) {
-		throw {
-			message: message || 'explicit failure'
-		};
+		throw new AssertionError(message || 'explicit failure');
 	};
 
 	/**
