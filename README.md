@@ -6,7 +6,7 @@ The library exists mainly because Chai's `assert` API [doesn't work in older ver
 
 ## Using Ristretto
 
-Ristretto is intended to be used as an AMD module in conjuction with an AMD loader like [RequireJS](http://www.requirejs.org/) or (curl)[https://github.com/cujojs/curl], e.g.
+Ristretto is intended to be used as an AMD module in conjuction with an AMD loader like [RequireJS](http://www.requirejs.org/) or [curl](https://github.com/cujojs/curl), e.g.
 
     require(['ristretto'], function (assert) {
     	...
