@@ -4,6 +4,14 @@ module.exports = function(grunt) {
 	var files = ['test-suites.js', 'ristretto.js', 'test/**/*.js'];
 
 	grunt.initConfig({
+		jsdoc: {
+			dist: {
+				src: ['./ristretto.js'],
+				options: {
+					destination: 'doc'
+				}
+			}
+		},
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc'
@@ -16,6 +24,7 @@ module.exports = function(grunt) {
 				reporter: 'Nyan'
 			}
 		},
+		pkg: grunt.file.readJSON('package.json'),
 		watch: {
 			scripts: {
 				files: files,
@@ -24,12 +33,27 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			}
+		},
+		yuidoc: {
+			compile: {
+				name: '<%= pkg.name %>',
+				description: '<%= pkg.description %>',
+				version: '<%= pkg.version %>',
+				url: '<%= pkg.homepage %>',
+				options: {
+					ignorePaths: ['jam', 'node_modules', 'test'],
+					paths: '.',
+					outdir: 'doc',
+					theme: 'default'
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-mocha');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-yuidoc');
+	grunt.loadNpmTasks('grunt-mocha');
 	grunt.loadNpmTasks('grunt-notify');
 
 	grunt.registerTask('default', ['watch']);

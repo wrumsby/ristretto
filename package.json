@@ -1,51 +1,51 @@
 {
-	"name": "ristretto",
-	"description": "A browser friendly assertion library for Mocha",
-	"categories": [
-		"Testing"
-	],
-	"version": "0.0.3",
-	"dependencies": {},
-	"devDependencies": {
-		"grunt": "~0.4.1",
-		"grunt-mocha": "~0.3.0",
-		"grunt-contrib-watch": "~0.4.0",
-		"grunt-notify": "~0.1.4",
-		"grunt-contrib-jshint": "~0.4.0"
-	},
-	"jam": {
-		"dependencies": {
-		},
-		"devDependencies": {
-			"mocha": "1.9.0",
-			"chai-amd": "1.6.0"
-		},
-		"main": "ristretto.js",
-		"include": [
-			"ristretto.js",
-			"README.md"
-		]
-	},
-	"maintainers": [
-		{
-			"name": "Walter Rumsby",
-			"web": "http://walter.rumsby.name"
-		}
-	],
-	"bugs": {
-		"web": "https://github.com/wrumsby/ristretto/issues"
-	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/mit-license.php"
-		}
-	],
-	"repositories": [
-		{
-			"type": "git",
-			"url": "https://github.com/wrumsby/ristretto.git"
-		}
-	],
-	"github": "https://github.com/wrumsby/ristretto"
+  "name": "ristretto",
+  "description": "A browser friendly assertion library for Mocha",
+  "categories": [
+    "Testing"
+  ],
+  "version": "0.0.3",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-mocha": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-notify": "~0.1.4",
+    "grunt-contrib-jshint": "~0.4.0",
+    "grunt-contrib-yuidoc": "~0.4.0"
+  },
+  "jam": {
+    "dependencies": {},
+    "devDependencies": {
+      "mocha": "1.9.0",
+      "chai-amd": "1.6.0"
+    },
+    "main": "ristretto.js",
+    "include": [
+      "ristretto.js",
+      "README.md"
+    ]
+  },
+  "maintainers": [
+    {
+      "name": "Walter Rumsby",
+      "web": "http://walter.rumsby.name"
+    }
+  ],
+  "bugs": {
+    "web": "https://github.com/wrumsby/ristretto/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/wrumsby/ristretto.git"
+    }
+  ],
+  "github": "https://github.com/wrumsby/ristretto"
 }
