@@ -1,8 +1,8 @@
 # Introduction
 
-Ristretto is a browser friendly assertion library for Mocha.
+Ristretto is a browser friendly assertion library for [Mocha](http://visionmedia.github.io/mocha/).
 
-The library exists mainly because Chai's `assert` API [doesn't work in older versions of Internet Explorer](https://github.com/chaijs/chai/issues/117).
+The library exists mainly because Chai's `assert` API [doesn't work in older versions of Internet Explorer](https://github.com/chaijs/chai/issues/117). If you want to use an `assert`-style assertion API with Mocha and you want to run your tests in IE 8 or older then Ristretto is for you.
 
 ## Using Ristretto
 
