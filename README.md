@@ -32,6 +32,14 @@ Ristretto is available as a [JamJS](http://jamjs.org/) [package](http://jamjs.or
 
     npm install -g jamjs
 
- Then install Ristretto in your project directory:
+Then install Ristretto in your project directory:
 
     jam install ristretto
+
+Ristretto is also available as a [Bower](http://bower.io/) package. To install Ristretto via Bower first install Bower:
+
+	npm install -g bower
+
+Then install Ristretto in your project directory:
+
+	bower install git@github.com:wrumsby/ristretto.git
