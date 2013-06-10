@@ -1,0 +1,20 @@
+{
+	"name": "ristretto",
+	"version": "1.0.0",
+	"main": "ristretto.js",
+	"ignore": [
+		"test",
+		".editorconfig",
+		".gitignore",
+		".gitmodules",
+		".jshintrc",
+		"Gruntfile.js",
+		"package.json",
+		"README.md",
+		"require-config.js",
+		"test-runner.html",
+		"test-suites.js"
+	],
+	"dependencies": {},
+	"devDependencies": {}
+}
