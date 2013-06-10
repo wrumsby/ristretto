@@ -32,6 +32,11 @@
       "web": "http://walter.rumsby.name"
     }
   ],
+  "contributors": [
+    {
+      "name": "Gerard Paapu"
+    }
+  ]
   "bugs": {
     "web": "https://github.com/wrumsby/ristretto/issues"
   },
