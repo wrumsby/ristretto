@@ -180,5 +180,86 @@ define(['chai-amd', 'ristretto'], function (chai, ristretto) {
 				assert(false, 'ristretto.strictNotEqual() should fail if actual and expected are strictly equal');
 			});
 		});
+
+		describe('deepEqual', function () {
+			var proto = { a: 1 },
+				a = Object.create(proto),
+				b = Object.create(proto),
+				c = Object.create(proto);
+
+			a.b = 1;
+			b.b = 1;
+			c.b = 2;
+
+			it('should pass if primitives are equivalent', function () {
+				try {
+					ristretto.deepEqual(1, 1);
+					ristretto.deepEqual(null, null);
+					ristretto.deepEqual(undefined, undefined);
+				} catch (e) {
+					assert(false, 'ristretto.deepEqual() should pass if actual and expected primitives are equal');
+				}
+			});
+
+			it('should pass if objects are equivalent', function () {
+				try {
+					ristretto.deepEqual(a, b);
+					ristretto.deepEqual(b, a);
+				} catch (e) {
+					assert(false, 'ristretto.deepEqual() should pass if actual and expected objects are deeply equal');
+				}
+			});
+
+			it('should pass if arrays are equivalent', function () {
+				try {
+					ristretto.deepEqual([], []);
+					ristretto.deepEqual([1, 2, 3], [1, 2, 3]);
+				} catch (e) {
+					assert(false, 'ristretto.deepEqual() should pass if actual and expected arrays are deeply equal');
+				}
+			});
+		});
+
+		describe('deepNotEqual', function () {
+			var proto = { a: 1 },
+				a = Object.create(proto),
+				b = Object.create(proto),
+				c = Object.create(proto),
+				d = { b: 1 };
+
+			a.b = 1;
+			b.b = 1;
+			c.b = 2;
+
+			it('should fail if primitives are equivalent', function () {
+				try {
+					ristretto.deepNotEqual(1, 2);
+					ristretto.deepNotEqual(null, undefined);
+					ristretto.deepNotEqual(undefined, null);
+				} catch (e) {
+					assert(false, 'ristretto.deepNotEqual() should failt if actual and expected are equal');
+				}
+			});
+
+			it('should fail if objects are equivalent', function () {
+				try {
+					ristretto.deepNotEqual(a, c);
+					ristretto.deepNotEqual(a, d);
+					ristretto.deepNotEqual(b, c);
+					ristretto.deepNotEqual(b, d);
+				} catch (e) {
+					assert(false, 'ristretto.deepNotEqual() should fail if actual and expected objects are deeply equal');
+				}
+			});
+
+			it('should fail if arrays are equivalent', function () {
+				try {
+					ristretto.deepNotEqual([], { length: 0, splice: function () {} });
+					ristretto.deepNotEqual([1, 2, 3], [1, 2, 3, 4]);
+				} catch (e) {
+					assert(false, 'ristretto.deepNotEqual() should fail if actual and expected arrays are deeply equal');
+				}
+			});
+		});
 	});
 });
