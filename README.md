@@ -42,4 +42,4 @@ Ristretto is also available as a [Bower](http://bower.io/) package. To install R
 
 Then install Ristretto in your project directory:
 
-	bower install git@github.com:wrumsby/ristretto.git
+	bower install ristretto
