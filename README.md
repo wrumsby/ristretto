@@ -47,15 +47,25 @@ Then install Ristretto in your project directory:
 # API
 
     ristretto(value, [message]);
-    ristretto.truthy(value, [message]);
-    ristretto.falsey(value, [message]);
-    ristretto.fail([message]);
-    ristretto.equal(actual, expected, [message]);
-    ristretto.notEqual(actual, expected, [message]);
-    ristretto.strictEqual(actual, expected, [message]);
-    ristretto.strictNotEqual(actual, expected, [message]);
-    ristretto.isTrue(value, [message]);
-    ristretto.isFalse(value, [message]);
-    ristretto.deepEqual(actual, expected, [message]);
-    ristretto.deepNotEqual(actual, expected, [message]);
     
+    ristretto.truthy(value, [message]);
+    
+    ristretto.falsey(value, [message]);
+    
+    ristretto.fail([message]);
+    
+    ristretto.equal(actual, expected, [message]);
+    
+    ristretto.notEqual(actual, expected, [message]);
+    
+    ristretto.strictEqual(actual, expected, [message]);
+    
+    ristretto.strictNotEqual(actual, expected, [message]);
+    
+    ristretto.isTrue(value, [message]);
+    
+    ristretto.isFalse(value, [message]);
+    
+    ristretto.deepEqual(actual, expected, [message]);
+    
+    ristretto.deepNotEqual(actual, expected, [message]);
