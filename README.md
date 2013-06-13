@@ -4,7 +4,7 @@ Ristretto is a browser friendly assertion library for [Mocha](http://visionmedia
 
 The library exists mainly because Chai's `assert` API [doesn't work in older versions of Internet Explorer](https://github.com/chaijs/chai/issues/117). If you want to use an `assert`-style assertion API with Mocha and you want to run your tests in IE 8 or older then Ristretto is for you.
 
-## Using Ristretto
+# Using Ristretto
 
 Ristretto is intended to be used as an AMD module in conjuction with an AMD loader like [RequireJS](http://www.requirejs.org/) or [curl](https://github.com/cujojs/curl), e.g.
 
@@ -26,7 +26,7 @@ Whilst using modules is highly recommended, it is possible to use Ristretto with
 
     assert.strictEqual(acutal, expected, actual + ' !== ' + expected);
 
-## Package Manager Support
+# Package Manager Support
 
 Ristretto is available as a [JamJS](http://jamjs.org/) [package](http://jamjs.org/packages/#/details/ristretto). To install Ristretto via Jam first install Jam:
 
@@ -43,3 +43,19 @@ Ristretto is also available as a [Bower](http://bower.io/) package. To install R
 Then install Ristretto in your project directory:
 
 	bower install ristretto
+
+# API
+
+    ristretto(value, [message]);
+    ristretto.truthy(value, [message]);
+    ristretto.falsey(value, [message]);
+    ristretto.fail([message]);
+    ristretto.equal(actual, expected, [message]);
+    ristretto.notEqual(actual, expected, [message]);
+    ristretto.strictEqual(actual, expected, [message]);
+    ristretto.strictNotEqual(actual, expected, [message]);
+    ristretto.isTrue(value, [message]);
+    ristretto.isFalse(value, [message]);
+    ristretto.deepEqual(actual, expected, [message]);
+    ristretto.deepNotEqual(actual, expected, [message]);
+    
