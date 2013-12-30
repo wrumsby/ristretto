@@ -8,23 +8,33 @@ The library exists mainly because Chai's `assert` API [doesn't work in older ver
 
 Ristretto is intended to be used as an AMD module in conjuction with an AMD loader like [RequireJS](http://www.requirejs.org/) or [curl](https://github.com/cujojs/curl), e.g.
 
-    require(['ristretto'], function (assert) {
-    	...
-
+    require(['ristretto', 'something'], function (assert, something) {
     	describe('something', function () {
-    		it('should work', function () {
-    			assert.isTrue(true);
+    		describe('method', function () {
+	    		it('should work', function () {
+	    			var actual = something.method();
+
+	    			assert.isTrue(actual);
+	    		});
     		});
     	});
     });
 
 Whilst using modules is highly recommended, it is possible to use Ristretto without using AMD modules. If AMD support is not detected `ristretto` is attached to the `window` object, e.g.
 
-    var assert = window.ristretto;
+	(function () {
+	    var assert = window.ristretto;
 
-    ...
+    	describe('something', function () {
+    		describe('method', function () {
+	    		it('should work', function () {
+	    			var actual = something.method();
 
-    assert.strictEqual(acutal, expected, actual + ' !== ' + expected);
+	    			assert.isTrue(actual);
+	    		});
+    		});
+    	});
+	} ());
 
 # Package Manager Support
 
@@ -46,26 +56,88 @@ Then install Ristretto in your project directory:
 
 # API
 
-    ristretto(value, [message]);
-    
-    ristretto.truthy(value, [message]);
-    
-    ristretto.falsey(value, [message]);
-    
-    ristretto.fail([message]);
-    
-    ristretto.equal(actual, expected, [message]);
-    
-    ristretto.notEqual(actual, expected, [message]);
-    
-    ristretto.strictEqual(actual, expected, [message]);
-    
-    ristretto.strictNotEqual(actual, expected, [message]);
-    
-    ristretto.isTrue(value, [message]);
-    
-    ristretto.isFalse(value, [message]);
-    
-    ristretto.deepEqual(actual, expected, [message]);
-    
-    ristretto.deepNotEqual(actual, expected, [message]);
+## Testing Truthiness
+
+    require(['ristretto'], function (assert) {
+    	describe('something', function () {
+    		it('should be truthy', function () {
+    			var actual = 1;
+
+    			assert.isTruthy(actual);
+    			// you could also express this as
+    			assert.truthy(actual);
+    			// or
+    			assert(actual);
+    		});
+
+    		it('should be falsey', function () {
+    			var actual = 0;
+
+    			assert.isFalsey(actual);
+    			// you could also express this as
+    			assert.falsey(actual);
+    			// or
+    			assert(!actual);
+    		});
+    	});
+    });
+
+# Equality
+
+    require(['ristretto', 'something'], function (assert, something) {
+    	describe('something', function () {
+    		describe('method', function () {
+	    		it('should equal 1', function () {
+	    			var expected = 1,
+	    				actual = something.method();
+
+	    			assert.strictEqual(actual, expected);
+	    			// you could also express this as
+	    			assert(actual === expected);
+	    			// or, although things can be equal that aren't strictEqual
+	    			assert.equal(actual, expected);
+	    		});
+
+	    		it('should not equal 2', function () {
+	    			var expected = 2,
+	    				actual = something.method();
+
+	    			assert.strictNotEqual(actual, expected);
+	    			// you could also express this as
+	    			assert(actual !== expected);
+	    			// or, although things can be strictNotEqual that aren't notEqual
+	    			assert.notEqual(actual, expected);
+	    		});
+    		});
+    	});
+    });
+
+# Deep Equality
+
+	requre(['ristretto'], function (assert) {
+		describe('something', function () {
+			var actual = [1, 2, 3],
+				expected = [1, 2, 3];
+
+			assert.deepEqual(actual, expected);
+		});
+	});
+
+# Failure
+
+    require(['ristretto', 'testable'], function (assert, Testable) {
+    	describe('testable', function () {
+    		describe('method', function () {
+	    		it('should not fire an "invoked" event', function () {
+					var testable = new Testable();
+
+					testable.on('invoked', function () {
+						assert.fail('"invoked" event should not be fired');
+					});
+
+					testable.method();
+				});
+    		});
+    	});
+    });
+
