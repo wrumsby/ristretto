@@ -141,9 +141,24 @@
 	/**
 	 * Assert that `value` is truthy.
 	 *
+	 * @method isTruthy
+	 * @param value Value to test
+	 * @param {String} [message] Failure message
+	 * @since 1.3.0
+	 */
+	ristretto.isTruthy = function (value, message) {
+		if (!value) {
+			throw new AssertionError(message || value + ' is not truthy');
+		}
+	};
+
+	/**
+	 * Assert that `value` is truthy.
+	 *
 	 * @method truthy
 	 * @param value Value to test
 	 * @param {String} [message] Failure message
+	 * @deprecated Use `isTruthy` instead.
 	 */
 	ristretto.truthy = function (value, message) {
 		if (!value) {
@@ -154,9 +169,26 @@
 	/**
 	 * Assert that `value` is falsey.
 	 *
+	 * @method isFalsey
+	 * @param value Value to test
+	 * @param {String} [message] Failure message
+	 * @since 1.3.0
+	 */
+	ristretto.isFalsey = function (value, message) {
+		if (!value) {
+			return;
+		}
+
+		throw new AssertionError(message || value + ' is not falsey');
+	},
+
+	/**
+	 * Assert that `value` is falsey.
+	 *
 	 * @method falsey
 	 * @param value Value to test
 	 * @param {String} [message] Failure message
+	 * @deprecated Use `isFalsey` instead.
 	 */
 	ristretto.falsey = function (value, message) {
 		if (!value) {
@@ -272,6 +304,7 @@
 	 * @param actual
 	 * @param expected
 	 * @param {String} [message] Failure message
+	 * @since 1.2.0
 	 */
 	ristretto.deepEqual = function (actual, expected, message) {
 		if (!deepEqual(actual, expected)) {
@@ -286,6 +319,7 @@
 	 * @param actual
 	 * @param expected
 	 * @param {String} [message] Failure message
+	 * @since 1.2.0
 	 */
 	ristretto.deepNotEqual = function (actual, expected, message) {
 		if (deepEqual(actual, expected)) {
