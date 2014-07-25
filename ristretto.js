@@ -196,7 +196,7 @@
 		}
 
 		throw new AssertionError(message || value + ' is not falsey');
-	},
+	};
 
 	/**
 	 * Explicitly fail.
@@ -267,7 +267,7 @@
 		}
 
 		throw new AssertionError(message || actual + ' equals ' + expected);
-	},
+	};
 
 	/**
 	 * Asserts that `value` is `true`.
@@ -327,6 +327,7 @@
 		}
 	};
 
+	/*global define: false */
 	if (typeof define === 'function' && define.amd) {
 		define([], function () {
 			return ristretto;
